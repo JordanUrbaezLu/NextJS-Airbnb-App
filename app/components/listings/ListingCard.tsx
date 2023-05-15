@@ -8,9 +8,9 @@ import { format } from "date-fns";
 import useCountries from "@/app/hooks/useCountries";
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
+import DislikeButton from "../DislikeButton";
 import HeartButton from "../HeartButton";
 import Button from "../Button";
-import ClientOnly from "../ClientOnly";
 
 interface ListingCardProps {
   data: SafeListing;
@@ -97,11 +97,15 @@ const ListingCard: React.FC<ListingCardProps> = ({
           />
           <div
             className="
+            flex
+            flex-row
+            gap-2
             absolute
             top-3
             right-3
           "
           >
+            <DislikeButton listingId={data.id} currentUser={currentUser} />
             <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
         </div>
