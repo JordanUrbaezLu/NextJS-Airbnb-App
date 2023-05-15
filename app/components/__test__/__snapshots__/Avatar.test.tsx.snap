@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Should render component correctly. 1`] = `
+<img
+  alt="Avatar"
+  class="rounded-full"
+  data-nimg="1"
+  decoding="async"
+  height="30"
+  loading="lazy"
+  src="/_next/image?url=%2Fimages%2Fplaceholder.jpg&w=64&q=75"
+  srcset="/_next/image?url=%2Fimages%2Fplaceholder.jpg&w=32&q=75 1x, /_next/image?url=%2Fimages%2Fplaceholder.jpg&w=64&q=75 2x"
+  style="color: transparent;"
+  width="30"
+/>
+`;
