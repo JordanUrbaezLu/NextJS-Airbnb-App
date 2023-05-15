@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -12,6 +12,7 @@ import { SafeUser } from "@/app/types";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
+import { useOnClickOutside } from "@/app/hooks/useOnClickOutside";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -24,7 +25,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const rentModal = useRentModal();
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(menuRef, () => setIsOpen(false));
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -82,9 +86,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           </div>
         </div>
       </div>
-      {isOpen && (
-        <div
-          className="
+      <div ref={menuRef}>
+        {isOpen && (
+          <div
+            className="
             absolute 
             rounded-xl 
             shadow-md
@@ -96,39 +101,43 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             top-12 
             text-sm
           "
-        >
-          <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
-              <>
-                <MenuItem
-                  label="My trips"
-                  onClick={() => router.push("/trips")}
-                />
-                <MenuItem
-                  label="My favorites"
-                  onClick={() => router.push("/favorites")}
-                />
-                <MenuItem
-                  label="My reservations"
-                  onClick={() => router.push("/reservations")}
-                />
-                <MenuItem
-                  label="My properties"
-                  onClick={() => router.push("/properties")}
-                />
-                <MenuItem label="Airbnb your home" onClick={rentModal.onOpen} />
-                <hr />
-                <MenuItem label="Logout" onClick={() => signOut()} />
-              </>
-            ) : (
-              <>
-                <MenuItem label="Login" onClick={loginModal.onOpen} />
-                <MenuItem label="Sign up" onClick={registerModal.onOpen} />
-              </>
-            )}
+          >
+            <div className="flex flex-col cursor-pointer">
+              {currentUser ? (
+                <>
+                  <MenuItem
+                    label="My trips"
+                    onClick={() => router.push("/trips")}
+                  />
+                  <MenuItem
+                    label="My favorites"
+                    onClick={() => router.push("/favorites")}
+                  />
+                  <MenuItem
+                    label="My reservations"
+                    onClick={() => router.push("/reservations")}
+                  />
+                  <MenuItem
+                    label="My properties"
+                    onClick={() => router.push("/properties")}
+                  />
+                  <MenuItem
+                    label="Airbnb your home"
+                    onClick={rentModal.onOpen}
+                  />
+                  <hr />
+                  <MenuItem label="Logout" onClick={() => signOut()} />
+                </>
+              ) : (
+                <>
+                  <MenuItem label="Login" onClick={loginModal.onOpen} />
+                  <MenuItem label="Sign up" onClick={registerModal.onOpen} />
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
