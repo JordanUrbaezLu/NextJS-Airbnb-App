@@ -21,6 +21,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Update Prisma Schema on Mongo Database
 
 ### Safe Way
+
 Here are the steps you would typically follow:
 
 Define the new field in your Prisma schema file
@@ -30,7 +31,9 @@ Run "npx prisma migrate deploy" to apply the migration to your database
 Run "npx prisma db push" to update the Prisma client with the latest schema changes
 
 ### Quick Way
+
 Update schema and run "npx prisma db push" to apply the schema changes to the database.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
