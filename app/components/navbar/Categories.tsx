@@ -112,12 +112,12 @@ const Categories = () => {
     <Container>
       <div
         className="
-          pt-4
-          flex 
+          flex
           flex-row 
           items-center 
-          justify-between
+          justify-between 
           overflow-x-auto
+          pt-4
         "
       >
         {categories.map((item) => (

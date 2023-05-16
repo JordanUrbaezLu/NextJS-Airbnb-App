@@ -6,11 +6,11 @@ const Loader = () => {
   return (
     <div
       className="
-      h-[70vh]
-      flex 
+      flex
+      h-[70vh] 
       flex-col 
-      justify-center 
       items-center 
+      justify-center 
     "
     >
       <PuffLoader size={100} color="red" />

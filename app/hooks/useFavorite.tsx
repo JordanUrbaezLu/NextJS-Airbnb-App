@@ -10,9 +10,14 @@ import useLoginModal from "./useLoginModal";
 interface IUseFavorite {
   listingId: string;
   currentUser?: SafeUser | null;
+  listingTitle: string;
 }
 
-const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
+const useFavorite = ({
+  listingId,
+  currentUser,
+  listingTitle,
+}: IUseFavorite) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
@@ -24,30 +29,43 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   }, [currentUser, listingId]);
 
   const toggleFavorite = useCallback(
-    async (e: React.MouseEvent<HTMLDivElement>) => {
+    (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
 
       if (!currentUser) {
         return loginModal.onOpen();
       }
 
-      try {
-        let request;
-
+      const fetchData = async (hasFavorited: boolean) => {
+        let response;
         if (hasFavorited) {
-          request = () => axios.delete(`/api/favorites/${listingId}`);
+          response = await axios.delete(`/api/favorites/${listingId}`);
         } else {
-          request = () => axios.post(`/api/favorites/${listingId}`);
+          response = await axios.post(`/api/favorites/${listingId}`);
         }
+        console.log(response);
+        return response;
+      };
 
-        await request();
-        router.refresh();
-        toast.success("Success");
-      } catch (error) {
-        toast.error("Something went wrong.");
-      }
+      const callback = fetchData(hasFavorited)
+        .catch((error) => {
+          return error.message;
+        })
+        .then(() => {
+          router.refresh();
+        });
+
+      const successComment = hasFavorited
+        ? `Success! You removed your favorite on ${listingTitle}!`
+        : `Success! You favorited the ${listingTitle} listing!`;
+
+      toast.promise(callback, {
+        loading: "Saving...",
+        success: <b>{successComment}</b>,
+        error: <b>Could not favorite.</b>,
+      });
     },
-    [currentUser, hasFavorited, listingId, loginModal, router]
+    [currentUser, hasFavorited, listingId, loginModal, router, listingTitle]
   );
 
   return {

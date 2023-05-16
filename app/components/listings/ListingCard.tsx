@@ -71,14 +71,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
   return (
     <div
       onClick={() => router.push(`/listings/${data.id}`)}
-      className="col-span-1 cursor-pointer group"
+      className="group col-span-1 cursor-pointer"
     >
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex w-full flex-col gap-2">
         <div
           className="
+            relative 
             aspect-square 
             w-full 
-            relative 
             overflow-hidden 
             rounded-xl
           "
@@ -86,30 +86,38 @@ const ListingCard: React.FC<ListingCardProps> = ({
           <Image
             fill
             className="
-              object-cover 
               h-full 
               w-full 
-              group-hover:scale-110 
-              transition
+              object-cover 
+              transition 
+              group-hover:scale-110
             "
             src={data.imageSrc}
             alt="Listing"
           />
           <div
             className="
+            absolute
+            right-3
+            top-3
             flex
             flex-row
             gap-2
-            absolute
-            top-3
-            right-3
           "
           >
-            <DislikeButton listingId={data.id} currentUser={currentUser} />
-            <HeartButton listingId={data.id} currentUser={currentUser} />
+            <DislikeButton
+              listingId={data.id}
+              currentUser={currentUser}
+              listingTitle={data.title}
+            />
+            <HeartButton
+              listingId={data.id}
+              currentUser={currentUser}
+              listingTitle={data.title}
+            />
           </div>
         </div>
-        <div className="font-semibold text-lg">
+        <div className="text-lg font-semibold">
           {location?.region}, {location?.label}
         </div>
         <div className="font-light text-neutral-500">

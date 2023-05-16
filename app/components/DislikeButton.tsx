@@ -8,15 +8,18 @@ import { SafeUser } from "@/app/types";
 interface HeartButtonProps {
   listingId: string;
   currentUser?: SafeUser | null;
+  listingTitle: string;
 }
 
 const DislikeButton: React.FC<HeartButtonProps> = ({
   listingId,
   currentUser,
+  listingTitle,
 }) => {
   const { hasDisliked, toggleDislike } = useDislike({
     listingId,
     currentUser,
+    listingTitle,
   });
 
   return (
@@ -24,18 +27,18 @@ const DislikeButton: React.FC<HeartButtonProps> = ({
       onClick={toggleDislike}
       className="
         relative
-        hover:opacity-80
-        transition
         cursor-pointer
+        transition
+        hover:opacity-80
       "
     >
       <AiOutlineDislike
         size={28}
         className="
-          fill-white
           absolute
-          -top-[2px]
           -right-[2px]
+          -top-[2px]
+          fill-white
         "
       />
       <AiFillDislike
