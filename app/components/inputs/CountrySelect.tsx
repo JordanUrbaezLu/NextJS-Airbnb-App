@@ -36,7 +36,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
             <div>{option.flag}</div>
             <div>
               {option.label},
-              <span className="text-neutral-500 ml-1">{option.region}</span>
+              <span className="ml-1 text-neutral-500">{option.region}</span>
             </div>
           </div>
         )}

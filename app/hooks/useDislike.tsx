@@ -10,9 +10,10 @@ import useLoginModal from "./useLoginModal";
 interface IUseDislike {
   listingId: string;
   currentUser?: SafeUser | null;
+  listingTitle: string;
 }
 
-const useDislike = ({ listingId, currentUser }: IUseDislike) => {
+const useDislike = ({ listingId, currentUser, listingTitle }: IUseDislike) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
@@ -24,30 +25,42 @@ const useDislike = ({ listingId, currentUser }: IUseDislike) => {
   }, [currentUser, listingId]);
 
   const toggleDislike = useCallback(
-    async (e: React.MouseEvent<HTMLDivElement>) => {
+    (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
 
       if (!currentUser) {
         return loginModal.onOpen();
       }
 
-      try {
-        let request;
-
-        if (hasDisliked) {
-          request = () => axios.delete(`/api/dislikes/${listingId}`);
+      const fetchData = async (hasFavorited: boolean) => {
+        let response;
+        if (hasFavorited) {
+          response = await axios.delete(`/api/dislikes/${listingId}`);
         } else {
-          request = () => axios.post(`/api/dislikes/${listingId}`);
+          response = await axios.post(`/api/dislikes/${listingId}`);
         }
+        console.log(response);
+        return response;
+      };
 
-        await request();
-        router.refresh();
-        toast.success("Success");
-      } catch (error) {
-        toast.error("Something went wrong.");
-      }
+      const callback = fetchData(hasDisliked)
+        .catch((error) => {
+          return error.message;
+        })
+        .then(() => {
+          router.refresh();
+        });
+
+      const successComment = hasDisliked
+        ? `Success! You removed your dislike on ${listingTitle}!`
+        : `Success! You disliked the ${listingTitle} listing!`;
+      toast.promise(callback, {
+        loading: "Saving...",
+        success: <b>{successComment}</b>,
+        error: <b>Could not favorite.</b>,
+      });
     },
-    [currentUser, hasDisliked, listingId, loginModal, router]
+    [currentUser, hasDisliked, listingId, loginModal, router, listingTitle]
   );
 
   return {

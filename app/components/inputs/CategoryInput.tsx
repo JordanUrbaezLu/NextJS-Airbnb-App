@@ -19,15 +19,15 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     <div
       onClick={() => onClick(label)}
       className={`
+        flex
+        cursor-pointer
+        flex-col
+        gap-3
         rounded-xl
         border-2
         p-4
-        flex
-        flex-col
-        gap-3
-        hover:border-black
         transition
-        cursor-pointer
+        hover:border-black
         ${selected ? "border-black" : "border-neutral-200"}
       `}
     >

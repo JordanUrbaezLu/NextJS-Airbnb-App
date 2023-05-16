@@ -54,15 +54,15 @@ const Search = () => {
     <div
       onClick={searchModal.onOpen}
       className="
-        border-[1px] 
         w-full 
-        md:w-auto 
-        py-2 
+        cursor-pointer 
         rounded-full 
+        border-[1px] 
+        py-2 
         shadow-sm 
-        hover:shadow-md 
         transition 
-        cursor-pointer
+        hover:shadow-md 
+        md:w-auto
       "
     >
       <div
@@ -75,9 +75,9 @@ const Search = () => {
       >
         <div
           className="
+            px-6 
             text-sm 
-            font-semibold 
-            px-6
+            font-semibold
           "
         >
           {locationLabel}
@@ -85,35 +85,35 @@ const Search = () => {
         <div
           className="
             hidden 
-            sm:block 
+            flex-1 
+            border-x-[1px] 
+            px-6 
+            text-center 
             text-sm 
             font-semibold 
-            px-6 
-            border-x-[1px] 
-            flex-1 
-            text-center
+            sm:block
           "
         >
           {durationLabel}
         </div>
         <div
           className="
-            text-sm 
-            pl-6 
-            pr-2 
-            text-gray-600 
             flex 
             flex-row 
             items-center 
-            gap-3
+            gap-3 
+            pl-6 
+            pr-2 
+            text-sm 
+            text-gray-600
           "
         >
           <div className="hidden sm:block">{guestLabel}</div>
           <div
             className="
-              p-2 
-              bg-rose-500 
               rounded-full 
+              bg-rose-500 
+              p-2 
               text-white
             "
           >

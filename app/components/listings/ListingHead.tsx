@@ -7,6 +7,7 @@ import { SafeUser } from "@/app/types";
 
 import Heading from "../Heading";
 import HeartButton from "../HeartButton";
+import DislikeButton from "../DislikeButton";
 
 interface ListingHeadProps {
   title: string;
@@ -35,27 +36,39 @@ const ListingHead: React.FC<ListingHeadProps> = ({
       />
       <div
         className="
-          w-full
-          h-[60vh]
-          overflow-hidden 
-          rounded-xl
           relative
+          h-[60vh]
+          w-full 
+          overflow-hidden
+          rounded-xl
         "
       >
         <Image
           src={imageSrc}
           fill
-          className="object-cover w-full"
+          className="w-full object-cover"
           alt="Image"
         />
         <div
           className="
             absolute
-            top-5
             right-5
+            top-5
+           flex
+            flex-row
+            gap-3
           "
         >
-          <HeartButton listingId={id} currentUser={currentUser} />
+          <HeartButton
+            listingId={id}
+            currentUser={currentUser}
+            listingTitle={title}
+          />
+          <DislikeButton
+            listingId={id}
+            currentUser={currentUser}
+            listingTitle={title}
+          />
         </div>
       </div>
     </>
