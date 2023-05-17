@@ -8,8 +8,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { AiFillGithub } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
-import useRegisterModal from "@/app/hooks/useRegisterModal";
-import useLoginModal from "@/app/hooks/useLoginModal";
+import useRegisterModal from "../../../app/hooks/useRegisterModal";
+import useLoginModal from "../../../app/hooks/useLoginModal";
 
 import Modal from "./Modal";
 import Input from "../inputs/Input";

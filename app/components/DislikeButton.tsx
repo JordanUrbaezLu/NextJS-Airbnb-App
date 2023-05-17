@@ -2,8 +2,8 @@
 
 import { AiFillDislike, AiOutlineDislike } from "react-icons/ai";
 
-import useDislike from "@/app/hooks/useDislike";
-import { SafeUser } from "@/app/types";
+import useDislike from "../../app/hooks/useDislike";
+import { SafeUser } from "../../app/types";
 
 interface HeartButtonProps {
   listingId: string;

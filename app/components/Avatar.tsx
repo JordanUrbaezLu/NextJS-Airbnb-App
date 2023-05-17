@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import toast, { useToasterStore } from "react-hot-toast";
 
 interface AvatarProps {
-  src: string | null | undefined;
+  src?: string | null;
 }
 
 const Avatar: React.FC<AvatarProps> = ({ src }) => {

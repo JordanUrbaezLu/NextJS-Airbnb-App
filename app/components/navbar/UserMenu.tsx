@@ -5,14 +5,14 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-import useLoginModal from "@/app/hooks/useLoginModal";
-import useRegisterModal from "@/app/hooks/useRegisterModal";
-import useRentModal from "@/app/hooks/useRentModal";
-import { SafeUser } from "@/app/types";
+import useLoginModal from "../../../app/hooks/useLoginModal";
+import useRegisterModal from "../../../app/hooks/useRegisterModal";
+import useRentModal from "../../../app/hooks/useRentModal";
+import { SafeUser } from "../../../app/types";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
-import { useOnClickOutside } from "@/app/hooks/useOnClickOutside";
+import { useOnClickOutside } from "../../../app/hooks/useOnClickOutside";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
