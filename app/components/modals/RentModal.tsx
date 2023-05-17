@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
-import useRentModal from "@/app/hooks/useRentModal";
+import useRentModal from "../../../app/hooks/useRentModal";
 
 import Modal from "./Modal";
 import Counter from "../inputs/Counter";

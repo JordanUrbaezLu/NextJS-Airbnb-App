@@ -1,4 +1,4 @@
-import { SafeUser } from "@/app/types";
+import { SafeUser } from "../../../app/types";
 
 import Categories from "./Categories";
 import Container from "../Container";
