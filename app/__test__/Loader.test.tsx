@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import Avatar from "../Avatar";
+import Loader from "../components/Loader";
 
-describe("Avatar", () => {
+describe("Loader", () => {
   test("Should render component correctly.", () => {
-    const { container } = render(<Avatar src={undefined} />);
+    const { container } = render(<Loader />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });

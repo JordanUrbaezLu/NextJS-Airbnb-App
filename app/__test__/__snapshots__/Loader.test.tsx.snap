@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Should render component correctly. 1`] = `
+<div
+  class=" flex h-[70vh]  flex-col  items-center  justify-center  "
+>
+  <span
+    style="display: inherit; position: relative; width: 100px; height: 100px;"
+  >
+    <span
+      style="position: absolute; height: 100px; width: 100px; border: thick solid red; border-radius: 50%; opacity: 1; top: 0px; left: 0px; animation-fill-mode: both; animation: react-spinners-PuffLoader-puff-1, react-spinners-PuffLoader-puff-2; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.3, 0.61, 0.355, 1); animation-delay: -1s;"
+    />
+    <span
+      style="position: absolute; height: 100px; width: 100px; border: thick solid red; border-radius: 50%; opacity: 1; top: 0px; left: 0px; animation-fill-mode: both; animation: react-spinners-PuffLoader-puff-1, react-spinners-PuffLoader-puff-2; animation-duration: 2s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.3, 0.61, 0.355, 1); animation-delay: 0s;"
+    />
+  </span>
+</div>
+`;
