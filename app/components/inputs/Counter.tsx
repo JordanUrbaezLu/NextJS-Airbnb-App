@@ -36,6 +36,7 @@ const Counter: React.FC<CounterProps> = ({
       </div>
       <div className="flex flex-row items-center gap-4">
         <div
+          role="button"
           onClick={onReduce}
           className="
             flex
@@ -64,6 +65,7 @@ const Counter: React.FC<CounterProps> = ({
           {value}
         </div>
         <div
+          role="button"
           onClick={onAdd}
           className="
             flex

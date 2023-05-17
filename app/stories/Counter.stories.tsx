@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
 
-import Counter from "../app/components/inputs/Counter";
 import { useState } from "react";
+import Counter from "../components/inputs/Counter";
 
 const meta: Meta<typeof Counter> = {
   title: "Airbnb/Counter",

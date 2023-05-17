@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import MenuItem from "../app/components/navbar/MenuItem";
+import MenuItem from "../components/navbar/MenuItem";
 
 const meta: Meta<typeof MenuItem> = {
   title: "Airbnb/MenuItem",

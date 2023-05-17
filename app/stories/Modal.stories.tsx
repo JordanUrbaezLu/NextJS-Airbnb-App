@@ -1,8 +1,8 @@
 import type { Meta } from "@storybook/react";
 
-import Modal from "../app/components/modals/Modal";
-import Button from "../app/components/Button";
 import { useState } from "react";
+import Button from "../components/Button";
+import Modal from "../components/modals/Modal";
 
 const meta: Meta<typeof Modal> = {
   title: "Airbnb/Modal",

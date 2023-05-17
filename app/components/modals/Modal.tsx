@@ -100,6 +100,7 @@ const Modal: React.FC<ModalProps> = ({
         >
           {/*content*/}
           <div
+            role="dialog"
             className={`
             translate
             h-full
