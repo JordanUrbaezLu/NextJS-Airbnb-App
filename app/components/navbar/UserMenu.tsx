@@ -13,6 +13,9 @@ import { SafeUser } from "../../../app/types";
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import { useOnClickOutside } from "../../../app/hooks/useOnClickOutside";
+import axios from "axios";
+import toast from "react-hot-toast";
+import Logo from "./Logo";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -41,6 +44,32 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
     rentModal.onOpen();
   }, [loginModal, rentModal, currentUser]);
+
+  const handleUpgradeMembership = () => {
+    axios
+      .post("/api/upgrade")
+      .then(() => {
+        toast.success("Upgraded to Premium Membership!");
+        router.refresh();
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
+  };
+
+  const handleCancelMembership = () => {
+    axios
+      .post("/api/cancel")
+      .then(() => {
+        toast.success("Canceled Membership");
+        router.refresh();
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
+  };
+
+  console.log(currentUser);
 
   return (
     <div className="relative">
@@ -104,7 +133,16 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           >
             <div className="flex cursor-pointer flex-col">
               {currentUser ? (
-                <>
+                <div>
+                  {currentUser?.membership && (
+                    <>
+                      <div className="flex cursor-default items-center justify-center gap-2 p-2">
+                        <Logo isLink={false} size={60} />
+                        <b>Premium</b>
+                      </div>
+                      <hr />
+                    </>
+                  )}
                   <MenuItem
                     label="My trips"
                     onClick={() => router.push("/trips")}
@@ -129,9 +167,21 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                     label="Airbnb your home"
                     onClick={rentModal.onOpen}
                   />
+                  {!currentUser?.membership && (
+                    <MenuItem
+                      label="Upgrade to Premium Membership"
+                      onClick={handleUpgradeMembership}
+                    />
+                  )}
+                  {!!currentUser?.membership && (
+                    <MenuItem
+                      label="Cancel Premium"
+                      onClick={handleCancelMembership}
+                    />
+                  )}
                   <hr />
                   <MenuItem label="Logout" onClick={() => signOut()} />
-                </>
+                </div>
               ) : (
                 <>
                   <MenuItem label="Login" onClick={loginModal.onOpen} />

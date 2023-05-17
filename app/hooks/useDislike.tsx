@@ -32,14 +32,13 @@ const useDislike = ({ listingId, currentUser, listingTitle }: IUseDislike) => {
         return loginModal.onOpen();
       }
 
-      const fetchData = async (hasFavorited: boolean) => {
+      const fetchData = async (hasDisliked: boolean) => {
         let response;
-        if (hasFavorited) {
+        if (hasDisliked) {
           response = await axios.delete(`/api/dislikes/${listingId}`);
         } else {
           response = await axios.post(`/api/dislikes/${listingId}`);
         }
-        console.log(response);
         return response;
       };
 

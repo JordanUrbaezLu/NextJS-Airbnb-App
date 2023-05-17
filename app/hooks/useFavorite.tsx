@@ -43,7 +43,6 @@ const useFavorite = ({
         } else {
           response = await axios.post(`/api/favorites/${listingId}`);
         }
-        console.log(response);
         return response;
       };
 
