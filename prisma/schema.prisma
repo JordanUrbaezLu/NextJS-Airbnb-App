@@ -21,6 +21,7 @@ model User {
     updatedAt      DateTime  @updatedAt
     favoriteIds    String[]  @db.ObjectId
     dislikeIds     String[]  @db.ObjectId
+    membership     String?
 
     accounts     Account[]
     listings     Listing[]
