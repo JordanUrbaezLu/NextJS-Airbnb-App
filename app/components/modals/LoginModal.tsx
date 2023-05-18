@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-//import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
@@ -85,12 +85,12 @@ const LoginModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      {/* <Button
+      <Button
         outline
         label="Continue with Google"
         icon={FcGoogle}
         onClick={() => signIn("google")}
-      /> */}
+      />
       <Button
         outline
         label="Continue with Github"
@@ -111,7 +111,6 @@ const LoginModal = () => {
               hover:underline
             "
           >
-            {" "}
             Create an account
           </span>
         </p>

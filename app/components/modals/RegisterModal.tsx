@@ -3,7 +3,7 @@
 import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { signIn } from "next-auth/react";
-//import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -96,12 +96,12 @@ const RegisterModal = () => {
         gap-4"
     >
       <hr />
-      {/* <Button
+      <Button
         outline
         label="Continue with Google"
         icon={FcGoogle}
         onClick={() => signIn("google")}
-      /> */}
+      />
       <Button
         outline
         label="Continue with Github"
@@ -126,7 +126,6 @@ const RegisterModal = () => {
               hover:underline
             "
           >
-            {" "}
             Log in
           </span>
         </p>
