@@ -3,7 +3,7 @@
 import { Range } from "react-date-range";
 
 import Button from "../Button";
-import Calendar from "../inputs/Calendar";
+import DatePicker from "../inputs/DatePicker";
 
 interface ListingReservationProps {
   price: number;
@@ -42,7 +42,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
         <div className="font-light text-neutral-600">night</div>
       </div>
       <hr />
-      <Calendar
+      <DatePicker
         value={dateRange}
         disabledDates={disabledDates}
         onChange={(value) => onChangeDate(value.selection)}

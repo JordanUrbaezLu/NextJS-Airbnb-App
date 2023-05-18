@@ -7,7 +7,7 @@ import useCountries from "../../../app/hooks/useCountries";
 import { SafeUser } from "../../../app/types";
 
 import Avatar from "../Avatar";
-import ListingCategory from "./ListingCategory";
+import ListingCategory from "./ListingCategoryView";
 
 const Map = dynamic(() => import("../Map"), {
   ssr: false,

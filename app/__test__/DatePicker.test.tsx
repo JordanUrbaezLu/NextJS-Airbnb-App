@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
-import Calendar from "../components/inputs/Calendar";
+import DatePicker from "../components/inputs/DatePicker";
 
-describe("Calendar", () => {
+describe("DatePicker", () => {
   test("Should render component correctly.", () => {
     const { container } = render(
-      <Calendar
+      <DatePicker
         value={{
           startDate: new Date(2023, 5, 2),
           endDate: new Date(2023, 5, 2),
