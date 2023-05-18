@@ -29,9 +29,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const menuTrigger = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(menuRef, () => setIsOpen(false));
+  useOnClickOutside([menuRef, menuTrigger], () => setIsOpen(false));
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -92,6 +93,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           Airbnb your home
         </div>
         <div
+          ref={menuTrigger}
           onClick={toggleOpen}
           className="
           flex
@@ -136,7 +138,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 <div>
                   {currentUser?.membership && (
                     <>
-                      <div className="flex cursor-default items-center justify-center gap-2 p-2">
+                      <div
+                        className="flex items-center justify-center gap-2 p-2"
+                        onClick={() => router.push("/account")}
+                      >
                         <Logo isLink={false} size={60} />
                         <b>Premium</b>
                       </div>
