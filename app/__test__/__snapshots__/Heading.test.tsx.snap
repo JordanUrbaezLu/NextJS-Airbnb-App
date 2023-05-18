@@ -2,6 +2,7 @@
 
 exports[`Heading Should render component correctly. 1`] = `
 <div
+  aria-level="1"
   class="text-start"
   role="heading"
 >
