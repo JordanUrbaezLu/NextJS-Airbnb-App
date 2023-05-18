@@ -2,11 +2,11 @@ import type { Meta } from "@storybook/react";
 
 import { useState } from "react";
 import { Range } from "react-date-range";
-import Calendar from "../components/inputs/Calendar";
+import DatePicker from "../components/inputs/DatePicker";
 
-const meta: Meta<typeof Calendar> = {
-  title: "Airbnb/Calendar",
-  component: Calendar,
+const meta: Meta<typeof DatePicker> = {
+  title: "Airbnb/DatePicker",
+  component: DatePicker,
 };
 
 export default meta;
@@ -18,7 +18,7 @@ export const Default = () => {
     key: "selection",
   });
   return (
-    <Calendar
+    <DatePicker
       onChange={(value) => setDateRange(value.selection)}
       value={dateRange}
     />
