@@ -34,8 +34,6 @@ Run "npx prisma db push" to update the Prisma client with the latest schema chan
 
 Update schema and run "npx prisma db push" to apply the schema changes to the database.
 
-## Deploy on Vercel
+## Typescript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Sometimes the typescript server will break. When you notice any odd typescript problems, try and restart the server on VSCode. To do this, open the Command Palette (Ctrl+Shift+P on Windows, or ⌘ on a Mac) and type TypeScript: Restart TS Server
