@@ -1,15 +1,15 @@
 "use client";
 
-import { toast } from "react-hot-toast";
 import axios from "axios";
-import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+import { toast } from "react-hot-toast";
 
-import { SafeListing, SafeUser } from "../../app/types";
+import { SafeListing, SafeUser } from "../../types";
 
-import Heading from "../../app/components/Heading";
-import Container from "../../app/components/Container";
-import ListingCard from "../../app/components/listings/ListingCard";
+import Container from "../../components/Container";
+import Heading from "../../components/Heading";
+import ListingCard from "../../components/listings/ListingCard";
 
 interface PropertiesClientProps {
   listings: SafeListing[];

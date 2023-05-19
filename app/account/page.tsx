@@ -1,23 +1,25 @@
-import EmptyState from "../../app/components/EmptyState";
-import ClientOnly from "../../app/components/ClientOnly";
-
-import getCurrentUser from "../../app/actions/getCurrentUser";
-import AccountClient from "./AccountClient";
+import EmptyState from "../../components/EmptyState";
+import ClientOnly from "../../components/ClientOnly";
+import getCurrentUser from "../../utils/getCurrentUser";
+import Heading from "../../components/Heading";
 
 const AccountPage = async () => {
   const currentUser = await getCurrentUser();
 
-  if (!currentUser) {
-    return (
-      <ClientOnly>
-        <EmptyState title="Unauthorized" subtitle="Please login" />
-      </ClientOnly>
-    );
-  }
-
   return (
     <ClientOnly>
-      <AccountClient currentUser={currentUser} />
+      {currentUser ? (
+        <Heading
+          title={`Hello ${currentUser?.name}`}
+          subtitle={
+            currentUser?.membership
+              ? `You are a ${currentUser.membership} Member`
+              : ""
+          }
+        />
+      ) : (
+        <EmptyState title="Unauthorized" subtitle="Please login" />
+      )}
     </ClientOnly>
   );
 };
