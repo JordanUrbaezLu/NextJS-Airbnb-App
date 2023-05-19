@@ -1,5 +1,3 @@
-
-
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
 
