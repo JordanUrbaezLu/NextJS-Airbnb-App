@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-import Button from "../libs/air-design/src/components/Button/Button";
+import AirButton from "../libs/air-design/src/components/AirButton/AirButton";
 import Heading from "./Heading";
 
 interface EmptyStateProps {
@@ -32,11 +32,9 @@ const EmptyState: React.FC<EmptyStateProps> = ({
       <Heading center title={title} subtitle={subtitle} />
       <div className="mt-4 w-48">
         {showReset && (
-          <Button
-            outline
-            label="Remove all filters"
-            onClick={() => router.push("/")}
-          />
+          <AirButton outline onClick={() => router.push("/")}>
+            Remove all filters
+          </AirButton>
         )}
       </div>
     </div>

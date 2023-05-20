@@ -2,9 +2,9 @@ import { Nunito } from "next/font/google";
 
 import Navbar from "../components/navbar/Navbar";
 
-import ToasterProvider from "../providers/ToasterProvider";
+import ToasterProvider from "../libs/providers/ToasterProvider";
 
-import ModalsProvider from "../providers/ModalsProvider";
+import ModalsProvider from "../libs/providers/ModalsProvider";
 import getCurrentUser from "../utils/getCurrentUser";
 import "./globals.css";
 

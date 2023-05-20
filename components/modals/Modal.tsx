@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
-import Button from "../../libs/air-design/src/components/Button/Button";
+import AirButton from "../../libs/air-design/src/components/AirButton/AirButton";
 
 interface ModalProps {
   isOpen?: boolean;
@@ -173,18 +173,17 @@ const Modal: React.FC<ModalProps> = ({
                   "
                 >
                   {secondaryAction && secondaryActionLabel && (
-                    <Button
+                    <AirButton
                       disabled={disabled}
-                      label={secondaryActionLabel}
                       onClick={handleSecondaryAction}
                       outline
-                    />
+                    >
+                      {secondaryActionLabel}
+                    </AirButton>
                   )}
-                  <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                    onClick={handleSubmit}
-                  />
+                  <AirButton disabled={disabled} onClick={handleSubmit}>
+                    {actionLabel}
+                  </AirButton>
                 </div>
                 {footer}
               </div>

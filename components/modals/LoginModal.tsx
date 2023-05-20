@@ -11,7 +11,7 @@ import { FcGoogle } from "react-icons/fc";
 import useLoginModal from "../../hooks/useLoginModal";
 import useRegisterModal from "../../hooks/useRegisterModal";
 
-import Button from "../../libs/air-design/src/components/Button/Button";
+import AirButton from "../../libs/air-design/src/components/AirButton/AirButton";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
 import Modal from "./Modal";
@@ -85,18 +85,12 @@ const LoginModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      <Button
-        outline
-        label="Continue with Google"
-        icon={FcGoogle}
-        onClick={() => signIn("google")}
-      />
-      <Button
-        outline
-        label="Continue with Github"
-        icon={AiFillGithub}
-        onClick={() => signIn("github")}
-      />
+      <AirButton outline icon={FcGoogle} onClick={() => signIn("google")}>
+        Continue with Google
+      </AirButton>
+      <AirButton outline icon={AiFillGithub} onClick={() => signIn("github")}>
+        Continue with Github
+      </AirButton>
       <div
         className="
       mt-4 text-center font-light text-neutral-500"
