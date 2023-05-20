@@ -2,7 +2,7 @@
 
 import { Range } from "react-date-range";
 
-import Button from "../../libs/air-design/src/components/Button/Button";
+import AirButton from "../../libs/air-design/src/components/AirButton/AirButton";
 import DatePicker from "../inputs/DatePicker";
 
 interface ListingReservationProps {
@@ -49,7 +49,9 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
       />
       <hr />
       <div className="p-4">
-        <Button disabled={disabled} label="Reserve" onClick={onSubmit} />
+        <AirButton disabled={disabled} onClick={onSubmit}>
+          Reserve
+        </AirButton>
       </div>
       <hr />
       <div
