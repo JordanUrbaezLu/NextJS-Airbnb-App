@@ -1,11 +1,11 @@
-import Heading from "../../components/Heading";
 import Container from "../../components/Container";
+import Heading from "../../components/Heading";
 
 import getCurrentUser from "../../utils/getCurrentUser";
 import getDislikeListings from "../../utils/getDislikeListings";
 
-import ListingCard from "../../components/listings/ListingCard";
 import EmptyState from "../../components/EmptyState";
+import ListingCard from "../../components/listings/ListingCard";
 
 const DislikesPage = async () => {
   const listings = await getDislikeListings();

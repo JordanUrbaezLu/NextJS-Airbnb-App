@@ -2,7 +2,7 @@
 
 import { Range } from "react-date-range";
 
-import Button from "../Button";
+import Button from "../../libs/air-design/src/components/Button/Button";
 import DatePicker from "../inputs/DatePicker";
 
 interface ListingReservationProps {

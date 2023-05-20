@@ -11,7 +11,7 @@ import { FcGoogle } from "react-icons/fc";
 import useLoginModal from "../../hooks/useLoginModal";
 import useRegisterModal from "../../hooks/useRegisterModal";
 
-import Button from "../Button";
+import Button from "../../libs/air-design/src/components/Button/Button";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
 import Modal from "./Modal";
