@@ -118,7 +118,7 @@ const LoginModal = () => {
     </div>
   );
 
-  return (
+  return loginModal.isOpen ? (
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
@@ -129,6 +129,8 @@ const LoginModal = () => {
       body={bodyContent}
       footer={footerContent}
     />
+  ) : (
+    <></>
   );
 };
 

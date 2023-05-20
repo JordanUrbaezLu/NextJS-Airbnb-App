@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 import Button from "../Button";
 
@@ -31,6 +32,9 @@ const Modal: React.FC<ModalProps> = ({
   secondaryActionLabel,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside([modalRef], onClose);
 
   useEffect(() => {
     setShowModal(isOpen);
@@ -85,6 +89,7 @@ const Modal: React.FC<ModalProps> = ({
         "
       >
         <div
+          ref={modalRef}
           className="
           relative 
           mx-auto

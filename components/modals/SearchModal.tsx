@@ -181,7 +181,7 @@ const SearchModal = () => {
     );
   }
 
-  return (
+  return searchModal.isOpen ? (
     <Modal
       isOpen={searchModal.isOpen}
       title="Filters"
@@ -192,6 +192,8 @@ const SearchModal = () => {
       onClose={searchModal.onClose}
       body={bodyContent}
     />
+  ) : (
+    <></>
   );
 };
 

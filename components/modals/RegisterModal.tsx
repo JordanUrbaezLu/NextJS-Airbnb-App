@@ -133,7 +133,7 @@ const RegisterModal = () => {
     </div>
   );
 
-  return (
+  return registerModal.isOpen ? (
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
@@ -144,6 +144,8 @@ const RegisterModal = () => {
       body={bodyContent}
       footer={footerContent}
     />
+  ) : (
+    <></>
   );
 };
 
