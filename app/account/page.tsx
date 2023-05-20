@@ -1,13 +1,13 @@
 import EmptyState from "../../components/EmptyState";
-import ClientOnly from "../../components/ClientOnly";
 import getCurrentUser from "../../utils/getCurrentUser";
 import Heading from "../../components/Heading";
+import Container from "../../components/Container";
 
 const AccountPage = async () => {
   const currentUser = await getCurrentUser();
 
   return (
-    <ClientOnly>
+    <Container>
       {currentUser ? (
         <Heading
           title={`Hello ${currentUser?.name}`}
@@ -20,7 +20,7 @@ const AccountPage = async () => {
       ) : (
         <EmptyState title="Unauthorized" subtitle="Please login" />
       )}
-    </ClientOnly>
+    </Container>
   );
 };
 

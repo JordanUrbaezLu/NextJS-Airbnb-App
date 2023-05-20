@@ -1,4 +1,4 @@
-import ClientOnly from "../../../components/ClientOnly";
+import Container from "../../../components/Container";
 import EmptyState from "../../../components/EmptyState";
 import getCurrentUser from "../../../utils/getCurrentUser";
 import getListingById from "../../../utils/getListingById";
@@ -15,22 +15,18 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   const reservations = await getReservations(params);
   const currentUser = await getCurrentUser();
 
-  if (!listing) {
-    return (
-      <ClientOnly>
-        <EmptyState />
-      </ClientOnly>
-    );
-  }
-
   return (
-    <ClientOnly>
-      <ListingClient
-        listing={listing}
-        reservations={reservations}
-        currentUser={currentUser}
-      />
-    </ClientOnly>
+    <Container>
+      {!!listing ? (
+        <ListingClient
+          listing={listing}
+          reservations={reservations}
+          currentUser={currentUser}
+        />
+      ) : (
+        <EmptyState />
+      )}
+    </Container>
   );
 };
 

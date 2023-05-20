@@ -70,7 +70,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       });
   };
 
-  console.log(currentUser);
+  const handleNavigate = (route: string) => {
+    setIsOpen(false);
+    router.push(route);
+  };
 
   return (
     <div className="relative">
@@ -129,7 +132,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             rounded-xl 
             bg-white 
             text-sm 
-            shadow-md 
+            shadow-full
             md:w-3/4
           "
           >
@@ -140,7 +143,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                     <>
                       <div
                         className="flex items-center justify-center gap-2 p-2"
-                        onClick={() => router.push("/account")}
+                        onClick={() => handleNavigate("/account")}
                       >
                         <Logo isLink={false} size={60} />
                         <b>Premium</b>
@@ -150,27 +153,30 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   )}
                   <MenuItem
                     label="My trips"
-                    onClick={() => router.push("/trips")}
+                    onClick={() => handleNavigate("/trips")}
                   />
                   <MenuItem
                     label="My dislikes"
-                    onClick={() => router.push("/dislikes")}
+                    onClick={() => handleNavigate("/dislikes")}
                   />
                   <MenuItem
                     label="My favorites"
-                    onClick={() => router.push("/favorites")}
+                    onClick={() => handleNavigate("/favorites")}
                   />
                   <MenuItem
                     label="My reservations"
-                    onClick={() => router.push("/reservations")}
+                    onClick={() => handleNavigate("/reservations")}
                   />
                   <MenuItem
                     label="My properties"
-                    onClick={() => router.push("/properties")}
+                    onClick={() => handleNavigate("/properties")}
                   />
                   <MenuItem
                     label="Airbnb your home"
-                    onClick={rentModal.onOpen}
+                    onClick={() => {
+                      rentModal.onOpen();
+                      setIsOpen(false);
+                    }}
                   />
                   {!currentUser?.membership && (
                     <MenuItem
@@ -189,8 +195,20 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 </div>
               ) : (
                 <>
-                  <MenuItem label="Login" onClick={loginModal.onOpen} />
-                  <MenuItem label="Sign up" onClick={registerModal.onOpen} />
+                  <MenuItem
+                    label="Login"
+                    onClick={() => {
+                      setIsOpen(false);
+                      loginModal.onOpen();
+                    }}
+                  />
+                  <MenuItem
+                    label="Sign up"
+                    onClick={() => {
+                      setIsOpen(false);
+                      registerModal.onOpen();
+                    }}
+                  />
                 </>
               )}
             </div>

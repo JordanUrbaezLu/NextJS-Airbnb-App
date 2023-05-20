@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        full: "rgba(0, 0, 0, 0.35) 0px 5px 15px;",
+        full: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
       },
     },
   },

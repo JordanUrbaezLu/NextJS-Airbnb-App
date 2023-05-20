@@ -267,7 +267,7 @@ const RentModal = () => {
     );
   }
 
-  return (
+  return rentModal.isOpen ? (
     <Modal
       disabled={isLoading}
       isOpen={rentModal.isOpen}
@@ -279,6 +279,8 @@ const RentModal = () => {
       onClose={rentModal.onClose}
       body={bodyContent}
     />
+  ) : (
+    <></>
   );
 };
 
