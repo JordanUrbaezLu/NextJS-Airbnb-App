@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-import Button from "./Button";
+import Button from "../libs/air-design/src/components/Button/Button";
 import Heading from "./Heading";
 
 interface EmptyStateProps {

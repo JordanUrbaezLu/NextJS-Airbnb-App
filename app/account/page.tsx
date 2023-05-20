@@ -1,7 +1,7 @@
-import EmptyState from "../../components/EmptyState";
-import getCurrentUser from "../../utils/getCurrentUser";
-import Heading from "../../components/Heading";
 import Container from "../../components/Container";
+import EmptyState from "../../components/EmptyState";
+import Heading from "../../components/Heading";
+import getCurrentUser from "../../utils/getCurrentUser";
 
 const AccountPage = async () => {
   const currentUser = await getCurrentUser();

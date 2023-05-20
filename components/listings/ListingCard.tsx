@@ -8,7 +8,7 @@ import { useCallback, useMemo } from "react";
 import useCountries from "../../hooks/useCountries";
 import { SafeListing, SafeReservation, SafeUser } from "../../types";
 
-import Button from "../Button";
+import Button from "../../libs/air-design/src/components/Button/Button";
 import DislikeButton from "../DislikeButton";
 import HeartButton from "../HeartButton";
 

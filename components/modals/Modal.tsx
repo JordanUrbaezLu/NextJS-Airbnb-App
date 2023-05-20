@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
-import Button from "../Button";
+import Button from "../../libs/air-design/src/components/Button/Button";
 
 interface ModalProps {
   isOpen?: boolean;

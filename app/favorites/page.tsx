@@ -4,8 +4,8 @@ import getCurrentUser from "../../utils/getCurrentUser";
 import getFavoriteListings from "../../utils/getFavoriteListings";
 
 import Container from "../../components/Container";
-import ListingCard from "../../components/listings/ListingCard";
 import Heading from "../../components/Heading";
+import ListingCard from "../../components/listings/ListingCard";
 
 const FavoritesPage = async () => {
   const listings = await getFavoriteListings();
