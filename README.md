@@ -37,3 +37,6 @@ Update schema and run "npx prisma db push" to apply the schema changes to the da
 ## Typescript
 
 Sometimes the typescript server will break. When you notice any odd typescript problems, try and restart the server on VSCode. To do this, open the Command Palette (Ctrl+Shift+P on Windows, or ⌘ on a Mac) and type TypeScript: Restart TS Server
+
+### Environments
+Production has a separate set of env variables for Google OAuth and Github OAuth.
