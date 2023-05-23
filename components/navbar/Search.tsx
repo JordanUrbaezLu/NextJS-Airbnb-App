@@ -59,9 +59,11 @@ const Search = () => {
         rounded-full 
         border-[1px] 
         py-2 
+        text-black 
         shadow-sm 
         transition 
-        hover:shadow-md 
+        hover:shadow-md
+        dark:text-white
         md:w-auto
       "
     >
@@ -105,10 +107,11 @@ const Search = () => {
             pl-6 
             pr-2 
             text-sm 
-            text-gray-600
+            text-gray-500
+          dark:text-gray-400
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
+          <div className="hidden sm:block ">{guestLabel}</div>
           <div
             className="
               rounded-full 

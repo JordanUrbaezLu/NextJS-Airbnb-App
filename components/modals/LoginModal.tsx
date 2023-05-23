@@ -96,7 +96,7 @@ const LoginModal = () => {
       mt-4 text-center font-light text-neutral-500"
       >
         <p>
-          First time using Airbnb?
+          {`First time using Airbnb? `}
           <span
             onClick={onToggle}
             className="

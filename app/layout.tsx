@@ -3,10 +3,11 @@ import { Nunito } from "next/font/google";
 import Navbar from "../components/navbar/Navbar";
 
 import ToasterProvider from "../libs/providers/ToasterProvider";
-
+import ThemeProvider from "../libs/providers/ThemeProvider";
 import ModalsProvider from "../libs/providers/ModalsProvider";
 import getCurrentUser from "../utils/getCurrentUser";
 import "./globals.css";
+import classNames from "classnames";
 
 export const metadata = {
   title: "Airbnb",
@@ -26,11 +27,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={classNames(font.className, "bg-white dark:bg-black")}>
         <ToasterProvider />
         <ModalsProvider />
         <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-28">{children}</div>
+        <div className="pb-20 pt-28">
+          <ThemeProvider>{children}</ThemeProvider>
+        </div>
       </body>
     </html>
   );

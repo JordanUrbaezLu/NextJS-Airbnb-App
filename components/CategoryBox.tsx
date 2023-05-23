@@ -60,8 +60,13 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
         p-3
         transition
         hover:text-neutral-800
+        dark:hover:text-white
         ${selected ? "border-b-neutral-800" : "border-transparent"}
-        ${selected ? "text-neutral-800" : "text-neutral-500"}
+        ${
+          selected
+            ? "text-neutral-800 dark:text-white"
+            : "text-neutral-500 dark:text-neutral-300"
+        }
       `}
     >
       <Icon size={26} />
