@@ -7,6 +7,8 @@ import ListingCard from "../components/listings/ListingCard";
 import getCurrentUser from "../utils/getCurrentUser";
 import getListings, { IListingsParams } from "../utils/getListings";
 
+import { Analytics } from "@vercel/analytics/react";
+
 interface HomeProps {
   searchParams: IListingsParams;
 }
@@ -42,6 +44,7 @@ const Home = async ({ searchParams }: HomeProps) => {
           />
         ))}
       </div>
+      <Analytics />
     </Container>
   );
 };
