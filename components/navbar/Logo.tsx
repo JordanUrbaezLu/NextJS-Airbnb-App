@@ -28,6 +28,8 @@ const Logo: React.FC<LogoProps> = ({ isLink = true, size }) => {
 
   return (
     <Image
+      priority
+      style={{ width: "auto", height: "auto" }}
       onClick={isLink ? () => router.push("/") : undefined}
       className={`hidden ${isLink && "cursor-pointer"} md:block`}
       src="/images/logo.png"

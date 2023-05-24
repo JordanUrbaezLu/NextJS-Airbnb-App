@@ -3,6 +3,7 @@ import EmptyState from "../../components/EmptyState";
 import Heading from "../../components/Heading";
 import ThemeToggle from "../../components/ThemeToggle";
 import getCurrentUser from "../../utils/getCurrentUser";
+import UpdateImageForm from "./UpdateImageForm";
 
 const AccountPage = async () => {
   const currentUser = await getCurrentUser();
@@ -20,6 +21,7 @@ const AccountPage = async () => {
             }
           />
           <ThemeToggle />
+          <UpdateImageForm />
         </>
       ) : (
         <EmptyState title="Unauthorized" subtitle="Please login" />
