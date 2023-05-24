@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import prisma from "../../../prisma/prismadb";
-import getCurrentUser from "../../../utils/getCurrentUser";
+import prisma from "../../../../../../prisma/prismadb";
+import getCurrentUser from "../../../../../../utils/getCurrentUser";
 
 export async function POST(request: Request) {
   const currentUser = await getCurrentUser();
@@ -10,14 +10,14 @@ export async function POST(request: Request) {
     return NextResponse.error();
   }
 
-  const membership = null;
+  const membership = "Premium";
 
   const user = await prisma.user.update({
     where: {
       id: currentUser.id,
     },
     data: {
-      membership,
+      membership: membership,
     },
   });
 

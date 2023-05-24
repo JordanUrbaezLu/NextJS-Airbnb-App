@@ -3,11 +3,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 
 const ThemeToggle = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
-
-  console.log("CurrentTheme:", currentTheme);
-  console.log("SystemTheme:", systemTheme);
+  const { theme, setTheme } = useTheme();
 
   return (
     <button
