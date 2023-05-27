@@ -48,7 +48,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
   const handleUpgradeMembership = () => {
     axios
-      .post("/api/upgrade")
+      .post("/api/account/user/membership/upgrade")
       .then(() => {
         toast.success("Upgraded to Premium Membership!");
         router.refresh();
@@ -60,7 +60,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
   const handleCancelMembership = () => {
     axios
-      .post("/api/cancel")
+      .post("/api/account/user/membership/cancel")
       .then(() => {
         toast.success("Canceled Membership");
         router.refresh();

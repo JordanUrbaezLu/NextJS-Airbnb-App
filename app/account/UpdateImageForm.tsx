@@ -5,9 +5,11 @@ import AirButton from "../../libs/air-design/src/components/AirButton/AirButton"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import usePasswordModal from "../../hooks/usePasswordModal";
 
 const UpdateImageForm = () => {
   const router = useRouter();
+  const passwordModal = usePasswordModal();
 
   const [imageURL, setImageURL] = useState<string>("");
 
@@ -30,6 +32,9 @@ const UpdateImageForm = () => {
       <input value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
       <AirButton onClick={() => handleUpdateProfileURL(imageURL)}>
         Change Profile Picture
+      </AirButton>
+      <AirButton onClick={() => passwordModal.onOpen()}>
+        Change Password
       </AirButton>
     </div>
   );
