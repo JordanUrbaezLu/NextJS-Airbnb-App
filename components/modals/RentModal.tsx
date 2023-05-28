@@ -7,7 +7,7 @@ import { useMemo, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
-import useRentModal from "../../hooks/useRentModal";
+import { useRentModal } from "../../hooks";
 
 import Heading from "../Heading";
 import CategoryInput from "../inputs/CategoryBox";

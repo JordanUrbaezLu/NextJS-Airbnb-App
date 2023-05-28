@@ -2,7 +2,7 @@
 
 import Select from "react-select";
 
-import useCountries from "../../hooks/useCountries";
+import { useCountries } from "../../hooks";
 
 export type CountrySelectValue = {
   flag: string;

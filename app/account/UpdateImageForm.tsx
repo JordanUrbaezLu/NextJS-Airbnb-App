@@ -5,7 +5,7 @@ import AirButton from "../../libs/air-design/src/components/AirButton/AirButton"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import usePasswordModal from "../../hooks/usePasswordModal";
+import { usePasswordModal } from "../../hooks";
 
 const UpdateImageForm = () => {
   const router = useRouter();

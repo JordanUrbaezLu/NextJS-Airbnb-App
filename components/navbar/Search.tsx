@@ -5,8 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 
-import useCountries from "../../hooks/useCountries";
-import useSearchModal from "../../hooks/useSearchModal";
+import { useCountries, useSearchModal } from "../../hooks";
 
 const Search = () => {
   const searchModal = useSearchModal();

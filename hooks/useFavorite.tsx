@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 import { SafeUser } from "../types";
 
-import useLoginModal from "./useLoginModal";
+import { useLoginModal } from "./useLoginModal";
 
 interface IUseFavorite {
   listingId: string;
@@ -13,7 +13,7 @@ interface IUseFavorite {
   listingTitle: string;
 }
 
-const useFavorite = ({
+export const useFavorite = ({
   listingId,
   currentUser,
   listingTitle,
@@ -72,5 +72,3 @@ const useFavorite = ({
     toggleFavorite,
   };
 };
-
-export default useFavorite;

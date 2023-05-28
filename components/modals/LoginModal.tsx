@@ -8,8 +8,7 @@ import { toast } from "react-hot-toast";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 
-import useLoginModal from "../../hooks/useLoginModal";
-import useRegisterModal from "../../hooks/useRegisterModal";
+import { useLoginModal, useRegisterModal } from "../../hooks";
 
 import AirButton from "../../libs/air-design/src/components/AirButton/AirButton";
 import Heading from "../Heading";

@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 import prisma from "../../../../../../prisma/prismadb";
-import getCurrentUser from "../../../../../../utils/getCurrentUser";
+import { getCurrentUser } from "../../../../../../utils";
 
 export async function POST(request: Request) {
   const currentUser = await getCurrentUser();

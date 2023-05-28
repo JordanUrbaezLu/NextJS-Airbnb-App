@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import usePasswordModal from "../../hooks/usePasswordModal";
+import { usePasswordModal } from "../../hooks";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "../inputs/Input";
 import Heading from "../Heading";

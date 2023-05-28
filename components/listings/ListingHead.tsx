@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import useCountries from "../../hooks/useCountries";
+import { useCountries } from "../../hooks";
 import { SafeUser } from "../../types";
 
 import DislikeButton from "../DislikeButton";
