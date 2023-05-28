@@ -6,7 +6,7 @@ import RegisterModal from "../../components/modals/RegisterModal";
 import RentModal from "../../components/modals/RentModal";
 import SearchModal from "../../components/modals/SearchModal";
 
-const ModalsProvider = () => {
+export const ModalsProvider = () => {
   return (
     <>
       <LoginModal />
@@ -17,5 +17,3 @@ const ModalsProvider = () => {
     </>
   );
 };
-
-export default ModalsProvider;

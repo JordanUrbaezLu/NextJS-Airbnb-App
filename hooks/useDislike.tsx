@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 import { SafeUser } from "../types";
 
-import useLoginModal from "./useLoginModal";
+import { useLoginModal } from "./useLoginModal";
 
 interface IUseDislike {
   listingId: string;
@@ -13,7 +13,11 @@ interface IUseDislike {
   listingTitle: string;
 }
 
-const useDislike = ({ listingId, currentUser, listingTitle }: IUseDislike) => {
+export const useDislike = ({
+  listingId,
+  currentUser,
+  listingTitle,
+}: IUseDislike) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
@@ -67,5 +71,3 @@ const useDislike = ({ listingId, currentUser, listingTitle }: IUseDislike) => {
     toggleDislike,
   };
 };
-
-export default useDislike;

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 
-import useCountries from "../../hooks/useCountries";
+import { useCountries } from "../../hooks";
 import { SafeListing, SafeReservation, SafeUser } from "../../types";
 
 import AirButton from "../../libs/air-design/src/components/AirButton/AirButton";

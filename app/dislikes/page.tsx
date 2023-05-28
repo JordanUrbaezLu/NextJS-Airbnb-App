@@ -1,8 +1,7 @@
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
 
-import getCurrentUser from "../../utils/getCurrentUser";
-import getDislikeListings from "../../utils/getDislikeListings";
+import { getCurrentUser, getDislikeListings } from "../../utils";
 
 import EmptyState from "../../components/EmptyState";
 import ListingCard from "../../components/listings/ListingCard";

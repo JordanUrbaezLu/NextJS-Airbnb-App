@@ -1,4 +1,4 @@
-Hook Information:
+Hooks Directory:
 
 No, creating your own specific hook does not necessarily require the use of useEffect. The useEffect hook is a general-purpose hook used for handling side effects in components, such as fetching data, subscribing to events, or interacting with the browser's DOM. However, not all custom hooks need to deal with side effects.
 

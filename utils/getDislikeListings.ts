@@ -1,8 +1,8 @@
 import prisma from "../prisma/prismadb";
 
-import getCurrentUser from "./getCurrentUser";
+import { getCurrentUser } from "./getCurrentUser";
 
-export default async function getDislikedListings() {
+export async function getDislikeListings() {
   try {
     const currentUser = await getCurrentUser();
 

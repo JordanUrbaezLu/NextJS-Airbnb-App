@@ -6,10 +6,8 @@ interface PasswordModalStore {
   onClose: () => void;
 }
 
-const usePasswordModal = create<PasswordModalStore>((set) => ({
+export const usePasswordModal = create<PasswordModalStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
-
-export default usePasswordModal;

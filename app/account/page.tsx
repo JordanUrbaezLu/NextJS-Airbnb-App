@@ -2,7 +2,7 @@ import Container from "../../components/Container";
 import EmptyState from "../../components/EmptyState";
 import Heading from "../../components/Heading";
 import ThemeToggle from "../../components/ThemeToggle";
-import getCurrentUser from "../../utils/getCurrentUser";
+import { getCurrentUser } from "../../utils";
 import UpdateImageForm from "./UpdateImageForm";
 
 const AccountPage = async () => {

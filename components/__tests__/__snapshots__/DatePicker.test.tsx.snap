@@ -251,7 +251,7 @@ exports[`DatePicker Should render component correctly. 1`] = `
         class="rdrDays"
       >
         <button
-          class="rdrDay rdrDayPassive rdrDayWeekend rdrDayStartOfWeek"
+          class="rdrDay rdrDayPassive rdrDayToday rdrDayWeekend rdrDayStartOfWeek"
           style="color: rgb(61, 145, 255);"
           tabindex="-1"
           type="button"

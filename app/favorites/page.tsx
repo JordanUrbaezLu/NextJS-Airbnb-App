@@ -1,7 +1,6 @@
 import EmptyState from "../../components/EmptyState";
 
-import getCurrentUser from "../../utils/getCurrentUser";
-import getFavoriteListings from "../../utils/getFavoriteListings";
+import { getCurrentUser, getFavoriteListings } from "../../utils";
 
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";

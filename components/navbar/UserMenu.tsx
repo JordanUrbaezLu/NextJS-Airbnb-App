@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-import useLoginModal from "../../hooks/useLoginModal";
-import useRegisterModal from "../../hooks/useRegisterModal";
-import useRentModal from "../../hooks/useRentModal";
+import { useLoginModal, useRegisterModal, useRentModal } from "../../hooks";
+
 import { SafeUser } from "../../types";
 
 import axios from "axios";

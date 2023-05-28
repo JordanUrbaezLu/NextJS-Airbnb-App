@@ -4,8 +4,7 @@ import Container from "../components/Container";
 import EmptyState from "../components/EmptyState";
 import ListingCard from "../components/listings/ListingCard";
 
-import getCurrentUser from "../utils/getCurrentUser";
-import getListings, { IListingsParams } from "../utils/getListings";
+import { getCurrentUser, getListings, IListingsParams } from "../utils";
 
 import { Analytics } from "@vercel/analytics/react";
 
