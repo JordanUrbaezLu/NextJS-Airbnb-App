@@ -41,3 +41,8 @@ Sometimes the typescript server will break. When you notice any odd typescript p
 ### Environments
 
 Production has a separate set of env variables for Google OAuth and Github OAuth.
+
+
+### Storybook
+
+This app uses Storybook to test it's React components.
