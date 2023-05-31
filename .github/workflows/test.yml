@@ -23,4 +23,4 @@ jobs:
       # run "npm install" script which is a clean install of packages
       - run: npm install
       # run the "npm run test" scripts which runs the test script for the project
-      - run: npm run test:ci
+      - run: npm run test
