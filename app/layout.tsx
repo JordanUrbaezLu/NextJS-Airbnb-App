@@ -29,14 +29,14 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={classNames(font.className, "bg-white dark:bg-black")}>
-        <ToasterProvider />
-        <ModalsProvider />
-        <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-28">
-          <ThemeProvider>{children}</ThemeProvider>
-        </div>
-      </body>
+      <ThemeProvider>
+        <body className={classNames(font.className, "bg-white dark:bg-black")}>
+          <ToasterProvider />
+          <ModalsProvider />
+          <Navbar currentUser={currentUser} />
+          <div className="pb-20 pt-28">{children}</div>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
