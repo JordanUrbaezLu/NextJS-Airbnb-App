@@ -1,20 +1,23 @@
-import Container from "../../components/Container";
-import Heading from "../../components/Heading";
+import EmptyState from "../../../components/EmptyState";
 
-import { getCurrentUser, getDislikeListings } from "../../utils";
+import { getCurrentUser, getFavoriteListings } from "../../../utils";
 
-import EmptyState from "../../components/EmptyState";
-import ListingCard from "../../components/listings/ListingCard";
+import Heading from "../../../components/Heading";
+import ListingCard from "../../../components/listings/ListingCard";
 
-const DislikesPage = async () => {
-  const listings = await getDislikeListings();
+const FavoritesPage = async () => {
+  const listings = await getFavoriteListings();
   const currentUser = await getCurrentUser();
 
+  if (!currentUser) {
+    return <EmptyState title="Unauthorized" subtitle="Please login" />;
+  }
+
   return (
-    <Container>
+    <div>
       {listings.length !== 0 ? (
         <>
-          <Heading title="Dislikes" subtitle="List of places you disliked!" />
+          <Heading title="Favorites" subtitle="List of places you favorited!" />
           <div
             className="
                   mt-10
@@ -39,12 +42,12 @@ const DislikesPage = async () => {
         </>
       ) : (
         <EmptyState
-          title="No dislikes found"
-          subtitle="Looks like you have no dislike listings."
+          title="No favorites found"
+          subtitle="Looks like you have no favorite listings."
         />
       )}
-    </Container>
+    </div>
   );
 };
 
-export default DislikesPage;
+export default FavoritesPage;

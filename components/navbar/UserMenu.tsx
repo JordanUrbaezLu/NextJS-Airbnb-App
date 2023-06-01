@@ -89,6 +89,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             font-semibold 
             transition 
             hover:bg-neutral-100 
+            dark:text-white
+            dark:hover:bg-neutral-500
             md:block
           "
         >
@@ -140,10 +142,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 <div>
                   {currentUser?.membership && (
                     <>
-                      <div
-                        className="flex items-center justify-center gap-2 p-2"
-                        onClick={() => handleNavigate("/account")}
-                      >
+                      <div className="flex cursor-default items-center justify-center gap-2 p-2">
                         <Logo isLink={false} size={60} />
                         <b>Premium</b>
                       </div>
@@ -151,24 +150,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                     </>
                   )}
                   <MenuItem
-                    label="My trips"
-                    onClick={() => handleNavigate("/trips")}
-                  />
-                  <MenuItem
-                    label="My dislikes"
-                    onClick={() => handleNavigate("/dislikes")}
-                  />
-                  <MenuItem
-                    label="My favorites"
-                    onClick={() => handleNavigate("/favorites")}
-                  />
-                  <MenuItem
-                    label="My reservations"
-                    onClick={() => handleNavigate("/reservations")}
-                  />
-                  <MenuItem
-                    label="My properties"
-                    onClick={() => handleNavigate("/properties")}
+                    label="My account"
+                    onClick={() => handleNavigate("/account")}
                   />
                   <MenuItem
                     label="Airbnb your home"

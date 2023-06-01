@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 
 import { useCountries, useSearchModal } from "../../hooks";
+import ThemeToggle from "../ThemeToggle";
 
 const Search = () => {
   const searchModal = useSearchModal();
@@ -50,9 +51,12 @@ const Search = () => {
   }, [guestCount]);
 
   return (
-    <div
-      onClick={searchModal.onOpen}
-      className="
+    <div className="flex w-full flex-row items-center md:w-auto">
+      <ThemeToggle />
+
+      <div
+        onClick={searchModal.onOpen}
+        className="
         w-full 
         cursor-pointer 
         rounded-full 
@@ -63,28 +67,28 @@ const Search = () => {
         transition 
         hover:shadow-md
         dark:text-white
-        md:w-auto
+
       "
-    >
-      <div
-        className="
+      >
+        <div
+          className="
           flex 
           flex-row 
           items-center 
           justify-between
         "
-      >
-        <div
-          className="
+        >
+          <div
+            className="
             px-6 
             text-sm 
             font-semibold
           "
-        >
-          {locationLabel}
-        </div>
-        <div
-          className="
+          >
+            {locationLabel}
+          </div>
+          <div
+            className="
             hidden 
             flex-1 
             border-x-[1px] 
@@ -94,11 +98,11 @@ const Search = () => {
             font-semibold 
             sm:block
           "
-        >
-          {durationLabel}
-        </div>
-        <div
-          className="
+          >
+            {durationLabel}
+          </div>
+          <div
+            className="
             flex 
             flex-row 
             items-center 
@@ -109,17 +113,18 @@ const Search = () => {
             text-gray-500
           dark:text-gray-400
           "
-        >
-          <div className="hidden sm:block ">{guestLabel}</div>
-          <div
-            className="
+          >
+            <div className="hidden sm:block ">{guestLabel}</div>
+            <div
+              className="
               rounded-full 
               bg-rose-500 
               p-2 
               text-white
             "
-          >
-            <BiSearch size={18} />
+            >
+              <BiSearch size={18} />
+            </div>
           </div>
         </div>
       </div>

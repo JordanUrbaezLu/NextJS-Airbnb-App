@@ -1,6 +1,6 @@
-import EmptyState from "../../components/EmptyState";
+import EmptyState from "../../../components/EmptyState";
 
-import { getCurrentUser, getListings } from "../../utils";
+import { getCurrentUser, getListings } from "../../../utils";
 
 import PropertiesClient from "./PropertiesClient";
 
